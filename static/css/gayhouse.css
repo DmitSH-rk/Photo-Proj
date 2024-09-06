@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+}
+.leftbar {
+  width: 30%;
+  height: 100dvh;
+  border-bottom: solid 3px rgb(48, 48, 49);
+  border-right: solid 3px rgb(48, 48, 49);
+  border-radius: 20px;
+  z-index: 999;
+  position: fixed;
+}
+.leftbarshd {
+  width: 30%;
+  height: 100vh;
+}
+.all {
+  width: 70%;
+}
+.top {
+  display: flex;
+  align-items: end;
+  height: 40%;
+  width: 100%;
+  border-right: 3px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  background-image: url("https://avatars.mds.yandex.net/i?id=f1d142a6efd7f0090ee10bc800918e0dc95f9c767bfc5fef-13079322-images-thumbs&n=13");
+  background-position: center;
+}
+.nam {
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 8vw;
+  color: aliceblue;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 10px;
+}
+.image-gallery {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.image_obj img {
+  max-width: 70%;
+  height: 70%;
+  margin: 10px;
+  border-radius: 20px;
+}
+.image_obj {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 40%;
+  width: 30%;
+  border: 3px solid gray;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+  -moz-box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+  box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+}
+.buy {
+  height: 10%;
+  width: 30%;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+.add {
+  height: 20%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 65%;
+  border: 3px solid gray;
+  border-radius: 10px;
+  background-color: beige;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.btn:hover {
+  background-color: gray;
+  transform: scale(1.1);
+  -webkit-box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+  -moz-box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+  box-shadow: 0px 16px 12px 8px rgba(34, 60, 80, 0.25);
+  transition: 0.42s;
+}

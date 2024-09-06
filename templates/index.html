@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script src="static/js/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="nav__head">
+        {{if .Usrautho}}
+        <a href="gayhouse" id="autor">Profile</a>
+        {{else}}
+        <a href="#modalauto" id="autor">Autorization</a>
+        {{end}}
+        <a href="#modal">Registration</a>
+      </div>
+      <!-- <div class="nav__foot">
+        <div class="nav__text">уход за лицом</div>
+        <div class="nav__text">помада</div>
+        <div class="nav__text">тени</div>
+        <div class="nav__text">пудры</div>
+        <div class="nav__text">блески</div>
+        <div class="nav__text">крема</div>
+        <div class="nav__text">консилеры</div>
+        <div class="nav__text">кушоны</div>
+      </div> -->
+    </div>
+    <div class="swiper Myswap">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          style="
+            background-image: url(https://avatars.mds.yandex.net/i?id=96a470f3c7ff63f7480d0f23c17fb562_l-9241199-images-thumbs&n=13);
+          "
+        ></div>
+        <div
+          class="swiper-slide"
+          style="
+            background-image: url(https://avatars.mds.yandex.net/i?id=76d2e8c5773fe7eed49b814878596799_l-7546007-images-thumbs&n=13);
+          "
+        ></div>
+        <div
+          class="swiper-slide"
+          style="
+            background-image: url(https://avatars.mds.yandex.net/i?id=a51f0831eec50b91d2f5b026fa1f547a_l-5247757-images-thumbs&n=13);
+          "
+        ></div>
+      </div>
+    </div>
+    <div class="main">
+      {{range .Imageutl }}
+      <div class="main__cols">
+        <div class="main__img">
+          <img src="{{.}}" alt="Product Image" class="productImage" />
+        </div>
+        <form action="/suser" method="post" class="main__post">
+          <input type="hidden" name="Url" class="imageUrl" />
+          <div class="main__price">
+            <button class="main__btn" type="submit">Save to Profile</button>
+          </div>
+        </form>
+      </div>
+      {{end}}
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const productImages = document.querySelectorAll(".productImage");
+          const imageUrls = document.querySelectorAll(".imageUrl");
+          productImages.forEach((img, index) => {
+            imageUrls[index].value = img.src;
+          });
+        });
+      </script>
+      <!-- <div class="main__cont"></div> -->
+    </div>
+    <!-- <div class="footer"></div> -->
+    <div id="modal" class="modal">
+      <div class="modal__box">
+        <a href="#" id="closeModal">CLOSE</a>
+        <input
+          type="text"
+          id="Password"
+          name="Password"
+          placeholder="Enter pass"
+        />
+        <input type="text" id="Name" name="Name" placeholder="Enter name" />
+        <button id="saveButton">Save</button>
+      </div>
+    </div>
+    <div id="modalauto" class="modal">
+      <form action="/check" method="post" class="modal__box">
+        <input
+          type="text"
+          id="Name"
+          name="Name"
+          placeholder="Enter Name"
+          required
+        />
+        <input
+          type="password"
+          id="Password"
+          name="Password"
+          placeholder="Enter Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
